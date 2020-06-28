@@ -30,20 +30,21 @@ import expectationsData from './data/life-expectancy-stats.json'
 // Добавить ссылку на сайт (сделать сайт)
 // + Добавить источники данных https://datasets.iisg.amsterdam/dataset.xhtml?persistentId=hdl:10622/LKYT53
 
-const getLifeExpectancy = (location, year) => {
-    // Найти нужную страну
-    const matchingCountries = expectationsData.filter((country) => country.name === location)
-    
-    // Вытащить эту страну из массива
-    const ourCountry = matchingCountries[0]
+const getLifeExpectancy = (countryName, year) => {
+    // Найти объект с нужной страной
+    const matchingCountries = expectationsData.filter((country) => country.name === countryName)
+
+    // Вытащить обьект с данными по этой стране из массива
+    const countryData = matchingCountries[0]
 
     // Вытащить из страны ожидаемую продолжительность исходя из года
-    const expectationString = ourCountry[year]
-    
-    // Преобразовать продолжительность из строки в число с плавающей запятой
-    const expectation = parseFloat(expectationString)
+    const lifeExpectancy = countryData[year]
 
-    return expectation
+    // Преобразовать продолжительность из строки в число с плавающей запятой (Float)
+    const result =  parseFloat(lifeExpectancy)
+
+    // Вернуть результат
+    return result
 }
 
 function App() {
@@ -86,7 +87,7 @@ function App() {
                 <button onClick={() => setAnswerHidden(false)}>Посчитать</button>
             </p>
             <p hidden={hideAnswer}>
-                Привет{name}, {remainingAge > 0 ? `тебе осталось жить примерно ${remainingAge} лет.`
+                Привет, {name}, {remainingAge > 0 ? `тебе осталось жить примерно ${remainingAge} лет.`
                                                 : `ты вообще должен уже лежать в ⚰️, узбагойся!`}
                 <br/>
                 {remainingAge > 0 ? `Ты должен дотянуть до ${lifeExpectancy}.`
