@@ -32,12 +32,12 @@ import expectationsData from './data/life-expectancy-stats.json'
 
 
 
-const getLifeExpectancy = (countryName, year) => 
-    expectationsData                                        // Берем массив с нашими данными
-        .filter((country) => country.name === countryName)  // Убираем все страны где не совпадают названия
-        .map((country) => country[year])                    // Из каждой совпадающей страны вытаскиваем нужный нам год
-        .map((year) => parseFloat(year))                    // Преобразуем год из строки во Float
-        [0]                                                 // Вытаскиваем из массива первый результат 
+const getLifeExpectancy = (countryName, year) =>
+    expectationsData // Берем массив с нашими данными
+        .filter((country) => country.name === countryName) // Убираем все страны где не совпадают названия
+        .map((country) => country[year]) // Из каждой совпадающей страны вытаскиваем нужный нам год
+        .map(parseFloat) // Преобразуем год из строки во Float
+    [0] // Вытаскиваем из массива первый результат 
 
 
 function App() {
@@ -45,10 +45,10 @@ function App() {
     const [year, setYear] = useState('2000')
     const [country, setCountry] = useState('Russia')
     const [hideAnswer, setAnswerHidden] = useState(true)
-    
+
     const currentDate = new Date()
     const currentYear = currentDate.getFullYear()
-    
+
     const age = currentYear - year
     const lifeExpectancy = getLifeExpectancy(country, year)
     const remainingAge = lifeExpectancy - age
@@ -80,11 +80,11 @@ function App() {
                 <button onClick={() => setAnswerHidden(false)}>Посчитать</button>
             </p>
             <p hidden={hideAnswer}>
-                Привет, {name}, {remainingAge > 0 ? `тебе осталось жить примерно ${remainingAge} лет.`
-                                                : `ты вообще должен уже лежать в ⚰️, узбагойся!`}
-                <br/>
+                Привет{name === "" ? "," : `, ${name}, `} {remainingAge > 0 ? `тебе осталось жить примерно ${remainingAge} лет.`
+                    : `ты вообще должен уже лежать в ⚰️, узбагойся!`}
+                <br />
                 {remainingAge > 0 ? `Ты должен дотянуть до ${lifeExpectancy}.`
-                                  : `Ты должен был умереть в ${lifeExpectancy} лет.`}
+                    : `Ты должен был умереть в ${lifeExpectancy} лет.`}
             </p>
         </div>
     )
