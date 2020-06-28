@@ -30,22 +30,15 @@ import expectationsData from './data/life-expectancy-stats.json'
 // Добавить ссылку на сайт (сделать сайт)
 // + Добавить источники данных https://datasets.iisg.amsterdam/dataset.xhtml?persistentId=hdl:10622/LKYT53
 
-const getLifeExpectancy = (countryName, year) => {
-    // Отфильтровать все страны где название совпадает с нашим
-    const matchingCountries = expectationsData.filter((x) =>x.name === countryName)
-    
-    // Вытащить обьект с данными по этой стране из массива совпадающих стран
-   const countryData = matchingCountries[0]
-    
-    // Вытащить из страны ожидаемую продолжительность исходя из года
-    const lifeExpectancy = countryData[year]
-    
-    // Преобразовать продолжительность из строки в число с плавающей запятой (Float)
-    const result = parseFloat(lifeExpectancy)
-    
-    // Вернуть результат
-    return result
-}
+
+
+const getLifeExpectancy = (countryName, year) => 
+    expectationsData                                        // Берем массив с нашими данными
+        .filter((country) => country.name === countryName)  // Убираем все страны где не совпадают названия
+        .map((country) => country[year])                    // Из каждой совпадающей страны вытаскиваем нужный нам год
+        .map((year) => parseFloat(year))                    // Преобразуем год из строки во Float
+        [0]                                                 // Вытаскиваем из массива первый результат 
+
 
 function App() {
     const [name, setName] = useState('')
