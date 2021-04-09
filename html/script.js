@@ -1,25 +1,29 @@
-const showWindow2 = () => {
-    document.getElementById('window').classList.toggle("hide")
-    document.getElementById('window').style.visibility = 'hidden'
+const startWindow = document.getElementById('window')
+const form = document.getElementById('window2')
+const congrats = document.getElementById('window3')
 
-    document.getElementById('window2').classList.toggle("show")
-    document.getElementById('window2').style.visibility = 'visible'
+const showWindow2 = () => {
+    startWindow.classList.toggle("hide")
+    startWindow.style.visibility = 'hidden'
+
+    form.classList.toggle("show")
+    form.style.visibility = 'visible'
 }
 
 const showWindow3 = () => {
-    document.getElementById('window2').classList.toggle("hide")
-    document.getElementById('window2').style.visibility = 'hidden'
+    form.classList.toggle("hide")
+    form.style.visibility = 'hidden'
 
-    document.getElementById('window3').classList.toggle("show")
-    document.getElementById('window3').style.visibility = 'visible'
+    congrats.classList.toggle("show")
+    congrats.style.visibility = 'visible'
 }
 
 const exit = () => {
-    document.getElementById('window2').classList.toggle("hide")
-    document.getElementById('window2').style.visibility = 'hidden'
+    form.classList.toggle("hide")
+    form.style.visibility = 'hidden'
 
-    document.getElementById('window3').classList.toggle("hide")
-    document.getElementById('window3').style.visibility = 'hidden'
+    congrats.classList.toggle("hide")
+    congrats.style.visibility = 'hidden'
 
-    document.getElementById('window').style.visibility = 'visible'
+    startWindow.style.visibility = 'visible'
 }
