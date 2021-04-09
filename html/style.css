@@ -80,6 +80,7 @@ body {
     background: #00cffd;
     box-shadow: 0px 10px 20px rgba(0, 207, 253, 0.3);
     border-radius: 20px;
+    outline: none;
     border: 0;
     font-weight: bold;
     padding: 10px 16px;
@@ -269,4 +270,35 @@ input[type='text']:focus {
     align-self: stretch;
     flex-grow: 0;
     margin: 0px 0px;
+}
+
+.hide {
+    animation: Hide 0.8s;
+}
+
+.show {
+    animation: Show 0.8s;
+}
+
+@keyframes Hide {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes Show {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+    
 }
