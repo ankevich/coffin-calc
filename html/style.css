@@ -26,8 +26,25 @@ body {
     background-position: left bottom, left top, right bottom;
 }
 
+.disclaimer p {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 130%;
+    padding-right: 50px;
+    padding-bottom: 20px;
+
+    color: #858586;
+}
+
 .window {
-    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     text-align: center;
 
@@ -163,6 +180,7 @@ input[type='text']:focus {
     justify-content: center;
     align-items: center;
     padding: 0px;
+    min-width: 480px;
 }
 
 .textblock2 > * {
@@ -213,7 +231,7 @@ input[type='text']:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 60px;
+    padding: 16px;
 
     background: linear-gradient(
         119.99deg,
@@ -234,4 +252,21 @@ input[type='text']:focus {
     transform: translate(-50%, -50%);
 
     visibility: hidden;
+}
+
+.gvozdi {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+}
+
+.gvozdi img {
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 0px;
 }
