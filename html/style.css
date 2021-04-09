@@ -19,30 +19,22 @@ body {
 }
 
 body {
-    background: white;
-
-    padding-top: 66px;
-    padding-bottom: 66px;
-    padding-left: 80px;
-    padding-right: 80px;
+    background: black;
+    background-image: url('images/coffin.svg'), url('images/leftcircle.svg'), url('images/rightcircle.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom, left top, right bottom;
 }
 
 .window {
     height: 100%;
-
-    background: black;
-    border-radius: 35px;
+      
     text-align: center;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    background-image: url('images/coffin.svg');
-    background-repeat: no-repeat;
-    background-position: left bottom;
-}
+   }
 
 .text {
     max-width: 550px;
@@ -181,7 +173,7 @@ h2 {
     margin-bottom: 24px;
 }
 
-p {
+.textblock2 p {
     text-align: center;
     font-weight: 500;
     font-size: 24px;
