@@ -4,7 +4,7 @@ const showWindow2 = () => {
 }
 
 
-const hideWindow2 = () => {
-    document.getElementById('window').style.opacity = 1
-    document.getElementById('window2').style.opacity = 0
+const showWindow3 = () => {
+    document.getElementById('window2').style.visibility = "hidden"
+    document.getElementById('window3').style.visibility = "visible"
 }
