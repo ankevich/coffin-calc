@@ -20,21 +20,22 @@ body {
 
 body {
     background: black;
-    background-image: url('images/coffin.svg'), url('images/leftcircle.svg'), url('images/rightcircle.svg');
+    background-image: url('images/coffin.svg'), url('images/leftcircle.svg'),
+        url('images/rightcircle.svg');
     background-repeat: no-repeat;
     background-position: left bottom, left top, right bottom;
 }
 
 .window {
     height: 100%;
-      
+
     text-align: center;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   }
+}
 
 .text {
     max-width: 550px;
@@ -92,9 +93,8 @@ body {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-   
-    visibility: hidden;
 
+    visibility: hidden;
 }
 .textblock {
     display: flex;
@@ -143,13 +143,6 @@ input[type='text']:focus {
     border-radius: 20px;
 }
 
-h2 {
-    font-weight: bold;
-    font-size: 28px;
-    padding: 0;
-    margin: 0;
-}
-
 .button2 {
     background: #219ebc;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
@@ -176,10 +169,19 @@ h2 {
     margin-bottom: 24px;
 }
 
+.textblock2 :last-child {
+    margin-bottom: 0;
+}
+
+.textblock2 h2 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
 .textblock2 p {
     text-align: center;
-    font-weight: 500;
-    font-size: 24px;
+    font-weight: bold;
+    font-size: 20px;
     line-height: 28px;
 }
 
@@ -197,11 +199,39 @@ h2 {
     border: 0;
     font-weight: bold;
     padding: 10px 16px;
-    width: 175px;
-    height: 43px;
+    width: 151px;
+    height: 38px;
     color: white;
 }
 
 .button3 img {
     padding-right: 8px;
+}
+
+.window3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+
+    background: linear-gradient(
+        119.99deg,
+        rgba(1, 150, 183, 0.7) -25.12%,
+        rgba(0, 207, 253, 0) 129.92%
+    );
+    border: 0.489852px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    filter: drop-shadow(0px 19.5941px 39.1881px rgba(33, 158, 188, 0.3));
+    backdrop-filter: blur(39.1881px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 30px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    visibility: hidden;
 }
