@@ -30,8 +30,6 @@ const exit = () => {
 
 document.addEventListener('keydown', (event) => {
     if (event.key == 'Escape') {
-        form.style.visibility = 'hidden'
-        congrats.style.visibility = 'hidden'
-        startWindow.style.visibility = 'visible'
+        exit()
     }
 })
